@@ -1,105 +1,165 @@
-# SML 2 Assignment – Lab Codes
+# SML 2 Assignment – Machine Learning Lab
 
-This repository contains the Python/Jupyter Notebook implementations for **Module II – Metaheuristic Optimization ML Algorithms**.
+A structured collection of Machine Learning Lab (SML 2) implementations using the BSDS500 (Berkeley Segmentation Data Set) image dataset.
 
-## Repository Contents
+This repository combines the original Module-II Metaheuristic Optimization work with a separate, self-contained set of BSDS500-based ML assignment notebooks (Q1–Q7).
 
-The work covers two major metaheuristic optimization techniques:
+## Overview
 
-- **Simulated Annealing** for numerical function minimization
-- **Genetic Algorithm – Question 1** for population-based function optimization
-- **Genetic Algorithm – Question 2** for real-valued function minimization
+The BSDS500 dataset contains natural images together with human-annotated segmentation/boundary information. For the seven ML questions, the image data is converted into a pixel-level classification / feature-learning setup.
 
-The notebooks are executed and include the calculations, intermediate results, tables, and final verification required for the assignment.
+### Dataset setup
+- Images: JPEG/PNG image files
+- Ground truth: MATLAB `.mat` annotation files
+- Ground-truth structure: `groundTruth`
+- Boundary field: `Boundaries`
+- Target: boundary vs. non-boundary pixel
+- Pixel features: RGB, grayscale intensity and gradient magnitude
+- Splits: original train / validation / test directory structure is preserved
 
-## Folder Structure
+> Ground-truth annotations are loaded directly from MATLAB `.mat` files rather than being treated as image files.
+
+## Repository Structure
 
 ```text
 sml_2_assignment-lab_codes/
 │
 ├── README.md
 ├── requirements.txt
+│
+├── BSDS500_ML_Assignment/
+│   ├── README.md
+│   ├── Q1_kNN.ipynb
+│   ├── Q2_Decision_Tree.ipynb
+│   ├── Q3_Naive_Bayes.ipynb
+│   ├── Q4_Logistic_Regression.ipynb
+│   ├── Q5_PCA_tSNE.ipynb
+│   ├── Q6_Outlier_Detection.ipynb
+│   └── Q7_LR_vs_SVM.ipynb
+│
+├── Module-II/
+│   ├── Simulated-Annealing/
+│   │   └── README.md
+│   └── Genetic-Algorithm/
+│       ├── GA-Q1/
+│       │   └── README.md
+│       └── GA-Q2/
+│           └── README.md
+│
 ├── Simulated_Annealing_Unique.ipynb
 ├── Genetic_Algorithm_1_Unique.ipynb
-├── Genetic_Algorithm_2_Unique.ipynb
-│
-└── Module-II/
-    ├── Simulated-Annealing/
-    │   └── README.md
-    │
-    └── Genetic-Algorithm/
-        ├── GA-Q1/
-        │   └── README.md
-        └── GA-Q2/
-            └── README.md
+└── Genetic_Algorithm_2_Unique.ipynb
 ```
 
-> The executable notebooks are kept at the repository root so they remain easy to locate and run directly. The `Module-II` documentation provides the corresponding academic organization without changing the working notebook files.
+## BSDS500 ML Assignment
 
-## Topics
+The `BSDS500_ML_Assignment/` folder contains seven notebooks covering supervised learning, dimensionality reduction and outlier detection.
 
-### Simulated Annealing
+| Question | Method | Main focus |
+|---|---|---|
+| Q1 | k-Nearest Neighbours | Pixel-level boundary classification |
+| Q2 | Decision Tree | Gini impurity, split selection and recursive tree construction |
+| Q3 | Gaussian Naive Bayes | Class-conditional Gaussian modelling |
+| Q4 | Logistic Regression | Binary classification using gradient descent |
+| Q5 | PCA + t-SNE | Dimensionality reduction and 2D representation |
+| Q6 | Outlier Detection | Z-score and IQR-based analysis |
+| Q7 | Logistic Regression vs SVM | Comparative metrics and ROC/AUC |
 
-Simulated Annealing is a probabilistic optimization technique inspired by the cooling process used in metallurgy. It can accept worse candidate solutions with a temperature-dependent probability, helping the search escape local minima.
+### Q1 — k-Nearest Neighbours
+Implements k-NN with vectorized Euclidean distance computation and evaluates multiple values of k for boundary/non-boundary pixel classification.
 
-The implementation demonstrates:
+### Q2 — Decision Tree
+Builds a decision tree from scratch using Gini impurity, threshold-based splitting, recursive partitioning and tree visualization.
 
-1. Initial solution and temperature setup
-2. Neighbour generation
-3. Objective-function evaluation
-4. Difference in objective values
-5. Acceptance probability
-6. Random-number based acceptance of worse solutions
-7. Temperature cooling
-8. Tracking of the best solution
-9. Analytical verification of the final optimum
+### Q3 — Gaussian Naive Bayes
+Implements Gaussian Naive Bayes from scratch using class-wise feature statistics and Gaussian likelihoods.
 
-### Genetic Algorithm – Q1
+### Q4 — Logistic Regression
+Implements binary logistic regression from scratch using the sigmoid function and gradient-descent optimization.
 
-The first Genetic Algorithm implementation demonstrates binary chromosome representation and population-based optimization using:
+### Q5 — PCA and t-SNE
+Performs PCA using covariance/eigen decomposition and a lightweight t-SNE workflow for two-dimensional visualization of pixel-feature structure.
 
-1. Binary encoding
-2. Decimal conversion
-3. Fitness calculation
-4. Total and average fitness
-5. Selection probability
-6. Expected and actual selection counts
-7. Mating-pool formation
-8. Single-point crossover
-9. Mutation
-10. Evaluation of the new population
+### Q6 — Outlier Detection
+Studies image-level summary statistics using Z-score and IQR methods, followed by winsorization/capping analysis.
 
-### Genetic Algorithm – Q2
+### Q7 — Logistic Regression vs SVM
+Trains both classifiers from scratch and compares them using:
+- Accuracy
+- Precision
+- Recall
+- F1-score
+- ROC curves
+- AUC
 
-The second Genetic Algorithm implementation demonstrates minimization using real-valued decoding from 5-bit chromosomes. The workflow includes:
+## Dataset
 
-1. Binary chromosome representation
-2. Decimal-to-real-value mapping
-3. Objective-function evaluation
-4. Fitness transformation for minimization
-5. Roulette-wheel selection
-6. Crossover at the specified chromosome position
-7. New-generation evaluation
-8. Analytical verification of the mathematical minimum
+The notebooks expect the BSDS500 archive in the following local layout:
 
-## How to Run
+```text
+bsds500archive/
+├── images/
+│   ├── train/
+│   ├── val/
+│   └── test/
+└── ground_truth/
+    ├── train/
+    ├── val/
+    └── test/
+```
 
-Open the required `.ipynb` file in Jupyter Notebook, JupyterLab, or VS Code with a Python kernel and execute the cells from top to bottom.
+The current notebooks use:
 
-Install the required packages with:
+```python
+BASE = r"C:\Users\cqds\Downloads\bsds500archive"
+```
+
+Update `BASE` before running the notebooks if the dataset is stored elsewhere.
+
+## Running the notebooks
+
+### 1. Install dependencies
 
 ```bash
 python -m pip install -r requirements.txt
 ```
 
-## Files
+Additional packages used by the BSDS500 notebooks:
 
-| Notebook | Topic |
-|---|---|
-| `Simulated_Annealing_Unique.ipynb` | Simulated Annealing numerical minimization |
-| `Genetic_Algorithm_1_Unique.ipynb` | Genetic Algorithm – binary encoding and optimization |
-| `Genetic_Algorithm_2_Unique.ipynb` | Genetic Algorithm – real encoding and minimization |
+```text
+scipy
+pillow
+```
 
-## Academic Note
+### 2. Open a notebook
+Use Jupyter Notebook, JupyterLab, or VS Code with a Python kernel.
 
-The parameter values and problem settings in these notebooks were intentionally customized for this submission while retaining the required metaheuristic algorithms and solution methodology.
+### 3. Execute cells top-to-bottom
+Each notebook follows a consistent workflow: dataset setup → preprocessing → algorithm implementation → evaluation → visualization.
+
+## Important Notes
+
+- BSDS500 ground truth files are `.mat` MATLAB files, not `.jpg` files.
+- Image and annotation files are paired using the image filename stem.
+- Q1–Q4 and Q7 use the annotated boundary ground truth.
+- Q5 and Q6 use image-derived features and do not require ground-truth `.mat` files.
+- The notebooks implement the requested algorithms directly rather than replacing the core methods with black-box model calls.
+
+## Module-II Metaheuristic Work
+
+The repository also contains the earlier Module-II work:
+
+- Simulated Annealing — numerical function minimization
+- Genetic Algorithm Q1 — binary chromosome optimization
+- Genetic Algorithm Q2 — real-valued decoding and minimization
+
+These files remain available at the repository root and inside `Module-II/`.
+
+## Author
+
+**Soham**  
+GitHub: [@codesbysoham](https://github.com/codesbysoham)
+
+---
+
+*Machine Learning Lab — SML 2*
