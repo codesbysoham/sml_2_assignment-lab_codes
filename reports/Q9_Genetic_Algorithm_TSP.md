@@ -3,7 +3,7 @@
 **Student:** Soham Kamble  
 **Roll No.:** IED/10014/23  
 **Course:** SML-II Laboratory Record  
-**Related notebook:** [Q9_GA_TSP.ipynb](../Q9_GA_TSP.ipynb)
+**Related notebook:** [Q9_GA_TSP.ipynb](../Module-II/Q9_GA_TSP.ipynb)
 
 ## 1. Aim
 

@@ -3,7 +3,7 @@
 **Student:** Soham Kamble  
 **Roll No.:** IED/10014/23  
 **Course:** SML-II Laboratory Record  
-**Related notebook:** [Q13_ACO_Shortest_Path.ipynb](../Q13_ACO_Shortest_Path.ipynb)
+**Related notebook:** [Q13_ACO_Shortest_Path.ipynb](../Module-II/Q13_ACO_Shortest_Path.ipynb)
 
 ## 1. Aim
 

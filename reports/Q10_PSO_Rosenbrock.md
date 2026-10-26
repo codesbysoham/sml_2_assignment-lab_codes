@@ -3,7 +3,7 @@
 **Student:** Soham Kamble  
 **Roll No.:** IED/10014/23  
 **Course:** SML-II Laboratory Record  
-**Related notebook:** [Q10_PSO_Rosenbrock.ipynb](../Q10_PSO_Rosenbrock.ipynb)
+**Related notebook:** [Q10_PSO_Rosenbrock.ipynb](../Module-II/Q10_PSO_Rosenbrock.ipynb)
 
 ## 1. Aim
 

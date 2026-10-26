@@ -12,35 +12,37 @@ sml_2_assignment-lab_codes/
 ├── requirements.txt
 ├── BSDS500_ML_Assignment/
 │   ├── README.md
-│   ├── Q1_kNN.ipynb
-│   ├── Q2_Decision_Tree.ipynb
-│   ├── Q3_Naive_Bayes.ipynb
-│   ├── Q4_Logistic_Regression.ipynb
-│   ├── Q5_PCA_tSNE.ipynb
-│   ├── Q6_Outlier_Detection.ipynb
-│   └── Q7_LR_vs_SVM.ipynb
+│   └── Q1–Q7 notebooks
 ├── Module-II/
 │   ├── README.md
 │   ├── Simulated-Annealing/
-│   └── Genetic-Algorithm/
-├── Simulated_Annealing_Unique.ipynb
-├── Genetic_Algorithm_1_Unique.ipynb
-├── Genetic_Algorithm_2_Unique.ipynb
-└── Q11_PSO_Unique.ipynb
+│   ├── Genetic-Algorithm/
+│   ├── ACO_Six_Stop_Route.ipynb
+│   ├── Genetic_Algorithm_1_Unique.ipynb
+│   ├── Genetic_Algorithm_2_Unique.ipynb
+│   ├── Q9_GA_TSP.ipynb
+│   ├── Q10_PSO_Rosenbrock.ipynb
+│   ├── Q11_PSO_Unique.ipynb
+│   ├── Q13_ACO_Shortest_Path.ipynb
+│   └── Simulated_Annealing_Unique.ipynb
+└── reports/
+    ├── Q9_Genetic_Algorithm_TSP.md
+    ├── Q10_PSO_Rosenbrock.md
+    └── Q13_ACO_Shortest_Path.md
 ```
 
 ## Module-II: Metaheuristic Optimization
 
 | Notebook | Method | Main focus |
 |---|---|---|
-| [Simulated_Annealing_Unique.ipynb](Simulated_Annealing_Unique.ipynb) | Simulated Annealing | Numerical function minimization |
-| [Genetic_Algorithm_1_Unique.ipynb](Genetic_Algorithm_1_Unique.ipynb) | Genetic Algorithm | Binary chromosome optimization |
-| [Genetic_Algorithm_2_Unique.ipynb](Genetic_Algorithm_2_Unique.ipynb) | Genetic Algorithm | Real-valued decoding and minimization |
-| [Q11_PSO_Unique.ipynb](Q11_PSO_Unique.ipynb) | Particle Swarm Optimization | One-dimensional quadratic maximization; per-iteration position, velocity and fitness output |
-| [ACO_Six_Stop_Route.ipynb](ACO_Six_Stop_Route.ipynb) | Ant Colony Optimization | Six-stop route, transition probabilities, pheromone deposit and evaporation |
-| [Q9_GA_TSP.ipynb](Q9_GA_TSP.ipynb) | Genetic Algorithm | TSP with tournament selection, order crossover, mutation and elitism |
-| [Q10_PSO_Rosenbrock.ipynb](Q10_PSO_Rosenbrock.ipynb) | Particle Swarm Optimization | Rosenbrock minimization with convergence history |
-| [Q13_ACO_Shortest_Path.ipynb](Q13_ACO_Shortest_Path.ipynb) | Ant Colony Optimization | Weighted graph shortest path with pheromone updates and convergence history |
+| [Simulated_Annealing_Unique.ipynb](Module-II/Simulated_Annealing_Unique.ipynb) | Simulated Annealing | Numerical function minimization |
+| [Genetic_Algorithm_1_Unique.ipynb](Module-II/Genetic_Algorithm_1_Unique.ipynb) | Genetic Algorithm | Binary chromosome optimization |
+| [Genetic_Algorithm_2_Unique.ipynb](Module-II/Genetic_Algorithm_2_Unique.ipynb) | Genetic Algorithm | Real-valued decoding and minimization |
+| [Q11_PSO_Unique.ipynb](Module-II/Q11_PSO_Unique.ipynb) | Particle Swarm Optimization | One-dimensional quadratic maximization; per-iteration position, velocity and fitness output |
+| [ACO_Six_Stop_Route.ipynb](Module-II/ACO_Six_Stop_Route.ipynb) | Ant Colony Optimization | Six-stop route, transition probabilities, pheromone deposit and evaporation |
+| [Q9_GA_TSP.ipynb](Module-II/Q9_GA_TSP.ipynb) | Genetic Algorithm | TSP with tournament selection, order crossover, mutation and elitism |
+| [Q10_PSO_Rosenbrock.ipynb](Module-II/Q10_PSO_Rosenbrock.ipynb) | Particle Swarm Optimization | Rosenbrock minimization with convergence history |
+| [Q13_ACO_Shortest_Path.ipynb](Module-II/Q13_ACO_Shortest_Path.ipynb) | Ant Colony Optimization | Weighted graph shortest path with pheromone updates and convergence history |
 
 ### PSO exercise
 
