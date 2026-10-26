@@ -37,6 +37,7 @@ sml_2_assignment-lab_codes/
 | [Genetic_Algorithm_1_Unique.ipynb](Genetic_Algorithm_1_Unique.ipynb) | Genetic Algorithm | Binary chromosome optimization |
 | [Genetic_Algorithm_2_Unique.ipynb](Genetic_Algorithm_2_Unique.ipynb) | Genetic Algorithm | Real-valued decoding and minimization |
 | [Q11_PSO_Unique.ipynb](Q11_PSO_Unique.ipynb) | Particle Swarm Optimization | One-dimensional quadratic maximization; per-iteration position, velocity and fitness output |
+| [ACO_Six_Stop_Route.ipynb](ACO_Six_Stop_Route.ipynb) | Ant Colony Optimization | Six-stop route, transition probabilities, pheromone deposit and evaporation |
 
 ### PSO exercise
 
