@@ -38,6 +38,9 @@ sml_2_assignment-lab_codes/
 | [Genetic_Algorithm_2_Unique.ipynb](Genetic_Algorithm_2_Unique.ipynb) | Genetic Algorithm | Real-valued decoding and minimization |
 | [Q11_PSO_Unique.ipynb](Q11_PSO_Unique.ipynb) | Particle Swarm Optimization | One-dimensional quadratic maximization; per-iteration position, velocity and fitness output |
 | [ACO_Six_Stop_Route.ipynb](ACO_Six_Stop_Route.ipynb) | Ant Colony Optimization | Six-stop route, transition probabilities, pheromone deposit and evaporation |
+| [Q9_GA_TSP.ipynb](Q9_GA_TSP.ipynb) | Genetic Algorithm | TSP with tournament selection, order crossover, mutation and elitism |
+| [Q10_PSO_Rosenbrock.ipynb](Q10_PSO_Rosenbrock.ipynb) | Particle Swarm Optimization | Rosenbrock minimization with convergence history |
+| [Q13_ACO_Shortest_Path.ipynb](Q13_ACO_Shortest_Path.ipynb) | Ant Colony Optimization | Weighted graph shortest path with pheromone updates and convergence history |
 
 ### PSO exercise
 
