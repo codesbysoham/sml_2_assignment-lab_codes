@@ -1,82 +1,105 @@
-# SML 2 Assignment – Machine Learning Lab
+# Statistical Machine Learning II — Lab Repository
 
-A structured collection of Machine Learning Lab (SML 2) implementations using the BSDS500 (Berkeley Segmentation Data Set) image dataset.
+A structured collection of practical implementations, experiments and reports for Statistical Machine Learning II.
 
-This repository combines the Module-II metaheuristic optimization notebooks with a separate set of BSDS500-based ML assignment notebooks (Q1–Q7).
-
-## Repository Structure
+## Repository layout
 
 ```text
-sml_2_assignment-lab_codes/
-├── README.md
-├── requirements.txt
-├── BSDS500_ML_Assignment/
-│   ├── README.md
-│   └── Q1–Q7 notebooks
-├── Module-II/
-│   ├── README.md
-│   ├── Simulated-Annealing/
-│   ├── Genetic-Algorithm/
-│   ├── ACO_Six_Stop_Route.ipynb
-│   ├── Genetic_Algorithm_1_Unique.ipynb
-│   ├── Genetic_Algorithm_2_Unique.ipynb
-│   ├── Q9_GA_TSP.ipynb
-│   ├── Q10_PSO_Rosenbrock.ipynb
-│   ├── Q11_PSO_Unique.ipynb
-│   ├── Q13_ACO_Shortest_Path.ipynb
-│   └── Simulated_Annealing_Unique.ipynb
-└── reports/
-    ├── Q9_Genetic_Algorithm_TSP.md
-    ├── Q10_PSO_Rosenbrock.md
-    └── Q13_ACO_Shortest_Path.md
+.
+├── BSDS500_ML_Assignment/        Seven image-boundary ML assignment notebooks
+├── Module-I/                     Expanded lab sequence and study documentation
+│   ├── Lab01_kNN.ipynb
+│   ├── Lab02_Decision_Tree.ipynb
+│   ├── Lab03_Naive_Bayes.ipynb
+│   ├── Lab04_Logistic_Regression.ipynb
+│   ├── Lab05_PCA_tSNE.ipynb
+│   ├── Lab06_Outlier_Detection.ipynb
+│   ├── Lab07_LR_vs_SVM.ipynb
+│   ├── Module_I_Combined.ipynb
+│   └── README.md
+├── Module-II/                     Metaheuristic optimisation and kernel methods
+│   ├── Simulated Annealing
+│   ├── Genetic Algorithms
+│   ├── Particle Swarm Optimisation
+│   ├── Ant Colony Optimisation
+│   ├── L1-L2-ElasticNet_Regularization.ipynb
+│   ├── Kernel_PCA.ipynb
+│   └── README.md
+├── reports/                       Experiment write-ups
+├── data/                          Dataset preparation scripts and local data
+└── requirements.txt
 ```
 
-## Module-II: Metaheuristic Optimization
+## Module I — Core machine learning
 
-| Notebook | Method | Main focus |
+The Module I experiments use the BSDS500 image segmentation dataset for boundary versus non-boundary pixel classification and related image-level analysis.
+
+| Lab | Topic | Key implementation |
 |---|---|---|
-| [Simulated_Annealing_Unique.ipynb](Module-II/Simulated_Annealing_Unique.ipynb) | Simulated Annealing | Numerical function minimization |
-| [Genetic_Algorithm_1_Unique.ipynb](Module-II/Genetic_Algorithm_1_Unique.ipynb) | Genetic Algorithm | Binary chromosome optimization |
-| [Genetic_Algorithm_2_Unique.ipynb](Module-II/Genetic_Algorithm_2_Unique.ipynb) | Genetic Algorithm | Real-valued decoding and minimization |
-| [Q11_PSO_Unique.ipynb](Module-II/Q11_PSO_Unique.ipynb) | Particle Swarm Optimization | One-dimensional quadratic maximization; per-iteration position, velocity and fitness output |
-| [ACO_Six_Stop_Route.ipynb](Module-II/ACO_Six_Stop_Route.ipynb) | Ant Colony Optimization | Six-stop route, transition probabilities, pheromone deposit and evaporation |
-| [Q9_GA_TSP.ipynb](Module-II/Q9_GA_TSP.ipynb) | Genetic Algorithm | TSP with tournament selection, order crossover, mutation and elitism |
-| [Q10_PSO_Rosenbrock.ipynb](Module-II/Q10_PSO_Rosenbrock.ipynb) | Particle Swarm Optimization | Rosenbrock minimization with convergence history |
-| [Q13_ACO_Shortest_Path.ipynb](Module-II/Q13_ACO_Shortest_Path.ipynb) | Ant Colony Optimization | Weighted graph shortest path with pheromone updates and convergence history |
+| 1 | k-Nearest Neighbours | Distance computation, scaling, k selection and classification |
+| 2 | Decision Trees | Gini impurity, split search, recursive tree construction and pruning concepts |
+| 3 | Naive Bayes | Class priors, Gaussian likelihoods and posterior classification |
+| 4 | Logistic Regression | Sigmoid model, binary cross-entropy and gradient descent |
+| 5 | PCA and t-SNE | Covariance eigendecomposition, explained variance and 2-D embeddings |
+| 6 | Outlier Detection | Z-score, IQR, robust scores and winsorisation |
+| 7 | Logistic Regression vs SVM | Hinge loss, confusion matrix, precision, recall, F1 and ROC-AUC |
 
-### PSO exercise
+The expanded notebooks are available in `Module-I/`. The `BSDS500_ML_Assignment/` directory retains the original assignment-specific notebooks.
 
-The PSO notebook maximizes (f(x)=-0.8(x-3.5)^2+18) on ([-8,9]). It starts from a specified swarm, uses zero initial velocities, and prints each iteration's particle state alongside the global best. The analytical maximum is at (x=3.5) with fitness 18.
+### Dataset setup
 
-## BSDS500 ML Assignment
+The existing assignment notebooks expect the BSDS500 dataset to be available locally. Arrange the data as:
 
-The `BSDS500_ML_Assignment/` directory contains seven notebooks covering supervised learning, dimensionality reduction and outlier detection.
+```text
+bsds500/
+├── images/
+│   ├── train/
+│   ├── val/
+│   └── test/
+└── ground_truth/
+    ├── train/
+    ├── val/
+    └── test/
+```
 
-| Question | Method | Main focus |
+Update the `BASE` variable in a notebook's first setup cell to the local `bsds500` directory. The notebooks load images and corresponding MATLAB ground-truth annotations; raw BSDS500 data is not redistributed here.
+
+## Module II — Optimisation and kernel methods
+
+| Lab | Topic | Key implementation |
 |---|---|---|
-| Q1 | k-Nearest Neighbours | Pixel-level boundary classification |
-| Q2 | Decision Tree | Gini impurity and split selection |
-| Q3 | Gaussian Naive Bayes | Class-conditional Gaussian modelling |
-| Q4 | Logistic Regression | Binary classification with gradient descent |
-| Q5 | PCA + t-SNE | Dimensionality reduction and 2D representation |
-| Q6 | Outlier Detection | Z-score and IQR analysis |
-| Q7 | Logistic Regression vs SVM | Comparative metrics and ROC/AUC |
+| 8 | Simulated Annealing | Temperature schedule, probabilistic acceptance and local-minimum escape |
+| 9 | Genetic Algorithm | Binary and real-valued representations; TSP optimisation |
+| 10 | Particle Swarm Optimisation | Particle position/velocity updates and Rosenbrock minimisation |
+| 11 | L1, L2 and Elastic Net | Ridge/Lasso/Elastic Net, coefficient shrinkage, sparsity and regularisation paths |
+| 12 | Kernel PCA | RBF kernel, kernel centering, eigendecomposition and nonlinear embeddings |
+| 13 | Ant Colony Optimisation | Transition probabilities, pheromone evaporation/deposition and shortest paths |
 
-## Running the notebooks
+The additional regularisation and Kernel PCA labs complement the existing SA, GA, PSO and ACO implementations.
 
-Open a notebook in Jupyter Notebook, JupyterLab or VS Code and execute its cells from top to bottom. Install the repository dependencies first:
+## Setup
+
+Install the Python dependencies:
 
 ```bash
 python -m pip install -r requirements.txt
 ```
 
-The BSDS500 notebooks also use `scipy` and `pillow`. Update the dataset path in those notebooks to match your local copy.
+Launch Jupyter:
+
+```bash
+jupyter lab
+```
+
+Open notebooks from the repository root unless a notebook's instructions specify otherwise. Run cells sequentially. Some experiments use BSDS500 image data and therefore require the local dataset setup described above.
+
+## Reproducibility
+
+- Random seeds are set in experiments wherever sampling or stochastic optimisation is used.
+- Evaluation metrics and plots are generated in the notebooks.
+- Dataset paths should be configured locally; absolute machine-specific paths should not be committed.
 
 ## Author
 
 **Soham**  
 GitHub: [@codesbysoham](https://github.com/codesbysoham)
-
----
-
-*Machine Learning Lab — SML 2*
