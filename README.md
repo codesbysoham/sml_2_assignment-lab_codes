@@ -15,15 +15,15 @@ A structured collection of practical implementations, experiments and reports fo
 │   ├── Lab05_PCA_tSNE.ipynb
 │   ├── Lab06_Outlier_Detection.ipynb
 │   ├── Lab07_LR_vs_SVM.ipynb
-│   ├── Module_I_Combined.ipynb
+│   ├── Lab_Notes.md
 │   └── README.md
 ├── Module-II/                     Metaheuristic optimisation and kernel methods
 │   ├── Simulated Annealing
 │   ├── Genetic Algorithms
 │   ├── Particle Swarm Optimisation
 │   ├── Ant Colony Optimisation
-│   ├── L1-L2-ElasticNet_Regularization.ipynb
-│   ├── Kernel_PCA.ipynb
+│   ├── Lab11_L1_L2_ElasticNet_Regularization.ipynb
+│   ├── Lab12_Kernel_PCA.ipynb
 │   └── README.md
 ├── reports/                       Experiment write-ups
 ├── data/                          Dataset preparation scripts and local data
@@ -44,7 +44,7 @@ The Module I experiments use the BSDS500 image segmentation dataset for boundary
 | 6 | Outlier Detection | Z-score, IQR, robust scores and winsorisation |
 | 7 | Logistic Regression vs SVM | Hinge loss, confusion matrix, precision, recall, F1 and ROC-AUC |
 
-The expanded notebooks are available in `Module-I/`. The `BSDS500_ML_Assignment/` directory retains the original assignment-specific notebooks.
+The expanded notebooks are available in `Module-I/` as seven standalone lab notebooks. `Lab_Notes.md` provides experiment summaries and viva prompts. The `BSDS500_ML_Assignment/` directory retains the original assignment-specific notebooks.
 
 ### Dataset setup
 
